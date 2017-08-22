@@ -1,0 +1,32 @@
+{
+  "name": "oes",
+  "version": "0.0.1",
+  "description": "Order Execution System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "tslint": "tslint --project tsconfig.json",
+    "start": "concurrently --kill-others \"npm run build:watch\" \"nodemon ./dist/server.js\""
+  },
+  "keywords": [
+    "oes",
+    "order",
+    "order-execution",
+    "order-execution-system"
+  ],
+  "author": "Erzhan Torokulov",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.39",
+    "@types/node": "^8.0.24",
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0",
+    "tslint": "^5.6.0",
+    "typescript": "^2.4.2"
+  }
+}
