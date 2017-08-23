@@ -8,7 +8,7 @@
     "build": "tsc",
     "build:watch": "tsc -w",
     "tslint": "tslint --project tsconfig.json",
-    "start": "concurrently --kill-others \"npm run build:watch\" \"nodemon ./dist/server.js\""
+    "start": "concurrently --kill-others \"npm run build:watch\" \"nodemon ./dist/srv/server.js\""
   },
   "keywords": [
     "oes",
