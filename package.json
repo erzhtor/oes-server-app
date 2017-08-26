@@ -8,7 +8,12 @@
     "build": "tsc",
     "build:watch": "tsc -w",
     "tslint": "tslint --project tsconfig.json",
-    "start": "concurrently --kill-others \"npm run build:watch\" \"nodemon ./dist/index.js\""
+    "start": "npm run build && node ./dist/index.js",
+    "start:hmr": "concurrently --kill-others \"npm run build:watch\" \"nodemon ./dist/index.js\"",
+    "docker:build": "docker build -t oes-server-app . --no-cache --force-rm",
+    "docker:run": "docker run -p 3000:3000 oes-server-app",
+    "docker:rm": "docker rm $(docker ps -a -q image=oes-server-app)",
+    "docker:rmi": "docker rmi oes-server-app"
   },
   "keywords": [
     "oes",
