@@ -1,0 +1,18 @@
+version: "3"
+services:
+    oes-server-app:
+        image: oes-server-app
+        ports:
+            - "80:3000"
+        networks:
+            - overlay
+        deploy:
+            replicas: 3
+            resources:
+                limits:
+                    cpus: "0.3"
+                    memory: 300M
+            restart_policy:
+                condition: on-failure
+networks:
+    overlay:
