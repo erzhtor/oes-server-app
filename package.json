@@ -10,29 +10,21 @@
     "tslint": "tslint --project tsconfig.json",
     "start": "npm run build && node ./dist/index.js",
     "start:hmr": "concurrently --kill-others \"npm run build:watch\" \"nodemon ./dist/index.js\"",
-
-    "//": "build docker image",
+    "//docker:build": "build docker image",
     "docker:build": "docker build -t oes-server-app . --no-cache --force-rm",
-
-    "//": "run docker image (after building)",
+    "//docker:run": "run docker image (after building)",
     "docker:run": "docker run -p 80:3000 oes-server-app",
-
-    "//": "remove all containers based on image",
+    "//docker:rm": "remove all containers based on image",
     "docker:rm": "docker rm $(docker ps -a -q -f ancestor=oes-server-app)",
-
-    "//": "remove image",
+    "//docker:rmi": "remove image",
     "docker:rmi": "docker rmi oes-server-app",
-
-    "//": "init swarm to connect to connect to local swarm",
+    "//docker:stack:init": "init swarm to connect to connect to local swarm",
     "docker:stack:init": "docker swarm init",
-
-    "//": "start/restart swarm when docker-compose.yml changes (if already deployed)",
+    "//docker:stack:deploy": "start/restart swarm when docker-compose.yml changes (if already deployed)",
     "docker:stack:deploy": "docker stack deploy -c docker-compose.yml oes-srv",
-
-    "//": "down the swarm (leaves single instance of the container)",
+    "//docker:stack:rm": "down the swarm (leaves single instance of the container)",
     "docker:stack:rm": "docker stack rm oes-srv",
-
-    "//": "down the swarm (all containers)",
+    "//docker:stack:leave": "down the swarm (all containers)",
     "docker:stack:leave": "docker swarm leave --force"
   },
   "keywords": [
