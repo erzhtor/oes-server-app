@@ -1,9 +1,9 @@
 import {
     GraphQLInt,
     GraphQLObjectType,
-    GraphQLSchema,
     GraphQLString,
 } from 'graphql';
+
 const UserType = new GraphQLObjectType({
     name: 'User',
     description: '...',
@@ -18,12 +18,12 @@ const UserType = new GraphQLObjectType({
                 lang: { type: GraphQLString },
             },
             resolve: (data, args) => {
-                return 'tada';
+                return 'some name';
             },
         },
         login: {
             type: GraphQLString,
-            resolve: (data) => 'erzhtor',
+            resolve: (data) => 'some login',
         },
         email: {
             type: GraphQLString,
@@ -31,20 +31,9 @@ const UserType = new GraphQLObjectType({
         },
         singupDate: {
             type: GraphQLString,
-            resolve: (data) => 'tada',
+            resolve: (data) => 'some signup date',
         },
     }),
 });
 
-export default new GraphQLSchema({
-    query: new GraphQLObjectType({
-        name: 'Query',
-        description: '...',
-        fields: {
-            user: {
-                type: UserType,
-                resolve: (data, args, context) => null,
-            },
-        },
-    }),
-});
+export { UserType };
