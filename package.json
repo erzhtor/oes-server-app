@@ -32,12 +32,15 @@
     "koa": "^2.3.0",
     "koa-graphql": "^0.7.3",
     "koa-router": "^7.2.1",
+    "mongoose": "^4.12.2",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
     "@types/graphql": "^0.11.5",
     "@types/koa": "^2.0.39",
     "@types/koa-router": "^7.0.23",
+    "@types/mongodb": "^2.2.13",
+    "@types/mongoose": "^4.7.23",
     "@types/node": "^8.0.24",
     "@types/socket.io": "^1.4.30",
     "concurrently": "^3.5.0",
