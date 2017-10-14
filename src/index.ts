@@ -1,8 +1,10 @@
 import * as Koa from 'koa';
-import graphqlHTTP = require('koa-graphql');
 import * as KoaRouter from 'koa-router';
 import * as io from 'socket.io';
-import MyGraphqlSchema from './graphql-schemas';
+
+import MyGraphqlSchema from './graphqlSchemas';
+
+import graphqlHTTP = require('koa-graphql');
 
 const app = new Koa();
 
