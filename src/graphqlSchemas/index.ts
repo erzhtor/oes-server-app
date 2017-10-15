@@ -5,13 +5,11 @@ import { IOrderModel, Order, User } from './../dbModels';
 
 import { IAppConfig } from './../interfaces/app-config';
 import { buildSchema } from 'graphql';
-import { connect } from 'mongoose';
 
 import graphqlHTTP = require('koa-graphql');
 
 const appConfig = config.get<IAppConfig>('appConfig');
 
-connect(appConfig.dbConnection);
 const typeDef = fs.readFileSync(appConfig.pathToGraphqlTypeDef, 'utf-8');
 
 const schema = buildSchema(typeDef);

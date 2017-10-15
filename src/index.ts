@@ -1,8 +1,14 @@
 import * as Koa from 'koa';
 import * as KoaRouter from 'koa-router';
+import * as config from 'config';
 import * as io from 'socket.io';
 
+import { IAppConfig } from './interfaces/app-config';
+import { connect } from 'mongoose';
 import { graphqlMiddleware } from './graphqlSchemas';
+
+const appConfig = config.get<IAppConfig>('appConfig');
+connect(appConfig.dbConnection);
 
 const app = new Koa();
 
