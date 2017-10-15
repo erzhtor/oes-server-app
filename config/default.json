@@ -1,5 +1,6 @@
 {
   "appConfig": {
-    "pathToGraphqlTypeDef": ""
+    "pathToGraphqlTypeDef": "",
+    "dbConnection": ""
   }
 }

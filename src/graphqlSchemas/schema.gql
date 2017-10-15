@@ -1,0 +1,33 @@
+type User {
+    id: ID!
+    name: String!
+    login: String!
+    email: String!
+    orders: [Order]
+    #signupDate
+}
+
+type Order {
+    id: ID!
+    title: String!
+    description: String!
+    author: User!
+    #creationDate
+}
+
+type Query {
+    user(id: ID!): User
+    order(id: ID!): Order
+    orders: [Order]
+    users: [User]
+}
+
+type Mutation {
+    createOrder(title: String!, description: String!): Order!
+    # updateOrder(id: ID!, title: String, description: String): Order!
+}
+
+# type Subscription {
+#     newOrder: Order!
+#     updatedOrder: Order!
+# }

@@ -2,9 +2,7 @@ import * as Koa from 'koa';
 import * as KoaRouter from 'koa-router';
 import * as io from 'socket.io';
 
-import MyGraphqlSchema from './graphqlSchemas';
-
-import graphqlHTTP = require('koa-graphql');
+import { graphqlMiddleware } from './graphqlSchemas';
 
 const app = new Koa();
 
@@ -16,10 +14,7 @@ router
         ctx.body = 'About page!';
     }).get('/redirect', async (ctx: Koa.Context) => {
         ctx.redirect('/');
-    }).all('/graphql', graphqlHTTP({
-        schema: MyGraphqlSchema,
-        graphiql: true,
-    }));
+    }).all('/graphql', graphqlMiddleware);
 
 app.use(router.routes());
 
