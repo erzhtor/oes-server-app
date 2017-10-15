@@ -11,7 +11,7 @@
     ],
     "object-literal-sort-keys": false,
     "ordered-imports": [
-      true,
+      false,
       {
         "import-sources-order": "lowercase-last",
         "named-imports-order": "lowercase-last"
