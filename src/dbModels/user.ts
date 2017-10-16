@@ -2,7 +2,6 @@ import { Document, Model, Schema, model } from 'mongoose';
 
 interface IUser {
     name: string;
-    login: string;
     email: string;
     signupDate: Date;
 }
@@ -11,7 +10,6 @@ export interface IUserModel extends IUser, Document { }
 export const UserSchema: Schema = new Schema({
     name: String,
     email: String,
-    login: String,
     signupDate: Date,
 });
 
