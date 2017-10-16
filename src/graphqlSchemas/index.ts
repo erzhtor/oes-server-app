@@ -1,14 +1,11 @@
-import * as config from 'config';
 import * as fs from 'fs';
 
 import { IOrderModel, Order, User } from './../dbModels';
 
-import { IAppConfig } from './../interfaces/app-config';
+import { appConfig } from '../helpers';
 import { buildSchema } from 'graphql';
 
 import graphqlHTTP = require('koa-graphql');
-
-const appConfig = config.get<IAppConfig>('appConfig');
 
 const typeDef = fs.readFileSync(appConfig.pathToGraphqlTypeDef, 'utf-8');
 
