@@ -30,7 +30,9 @@
   "dependencies": {
     "config": "^1.26.2",
     "graphql": "^0.11.7",
+    "jsonwebtoken": "^8.1.0",
     "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
     "koa-graphql": "^0.7.3",
     "koa-router": "^7.2.1",
     "mongoose": "^4.12.2",
@@ -39,7 +41,9 @@
   "devDependencies": {
     "@types/config": "0.0.33",
     "@types/graphql": "^0.11.5",
+    "@types/jsonwebtoken": "^7.2.3",
     "@types/koa": "^2.0.39",
+    "@types/koa-bodyparser": "^3.0.25",
     "@types/koa-router": "^7.0.23",
     "@types/mongodb": "^2.2.13",
     "@types/mongoose": "^4.7.23",

@@ -1,6 +1,6 @@
 type User {
     id: ID!
-    name: String!
+    name: String
     email: String!
     orders: [Order]
     #signupDate

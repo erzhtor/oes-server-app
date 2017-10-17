@@ -1,6 +1,7 @@
 {
   "appConfig": {
     "pathToGraphqlTypeDef": "",
-    "dbConnection": "mongodb://localhost:27017/oes"
+    "dbConnection": "mongodb://localhost:27017/oes",
+    "jwtSecret": "awesome-secret"
   }
 }
