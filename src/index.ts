@@ -27,7 +27,7 @@ router.
     all('/graphql', graphqlMiddleware);
 app.use(router.routes());
 
-const server = app.listen(3000);
+const server = app.listen(appConfig.port);
 
 const socket = io(server);
 socket.on('connection', () => {
